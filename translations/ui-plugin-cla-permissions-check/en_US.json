@@ -1,0 +1,9 @@
+{
+  "meta.title": "CLA Permissions Check",
+  "permissionCategories": "Permission category tabs",
+  "settings.pane.settingsTitle": "CLA Permissions Check",
+  "settings.pane.apiTitle": "API settings",
+  "settings.field.apiKey": "Enter your CLA API key",
+  "settings.field.licencesHeading": "Choose a licence",
+  "settings.field.submit": "Save"
+}

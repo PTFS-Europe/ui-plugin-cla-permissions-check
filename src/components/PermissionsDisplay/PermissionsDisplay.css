@@ -1,0 +1,42 @@
+h1, h2 {
+    margin: 0;
+}
+
+.container {
+    padding: 10px;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+}
+
+.metadata {
+    margin-bottom: 30px;
+}
+
+.summary {
+    display: flex;
+}
+
+.summary > .text {
+    flex: 1;
+}
+
+.summary > .icon {
+    font-size: 6em;
+    text-align: right;
+    padding-left: 15px;
+}
+
+.permitted {
+    color: var(--success);
+}
+
+.notPermitted {
+    color: var(--danger);
+}
+
+.footer {
+    font-weight: var(--medium);
+}
