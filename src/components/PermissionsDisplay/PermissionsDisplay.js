@@ -13,7 +13,7 @@ import css from './PermissionsDisplay.css';
 
 class PermissionsDisplay extends React.Component {
     static manifest = Object.freeze({
-      permissions: {
+      claPermissions: {
         type: 'rest',
         root: 'https://api.cla.co.uk/check-permissions/v1/GetPermissionByIdentifier',
         path: (_q, _p, _r, _l, props) => {
@@ -49,8 +49,13 @@ class PermissionsDisplay extends React.Component {
 
     static propTypes = {
       resources: PropTypes.shape({
-        config: PropTypes.object,
-        permissions: PropTypes.object
+        config: PropTypes.shape({
+          records: PropTypes.array.isRequired
+        }),
+        claPermissions: PropTypes.shape({
+          records: PropTypes.array,
+          isPending: PropTypes.bool
+        })
       }).isRequired,
     };
 
@@ -76,8 +81,8 @@ class PermissionsDisplay extends React.Component {
     }
 
     render() {
-      const container = this.props.resources?.permissions?.records?.[0];
-      if (this.props.resources?.permissions?.isPending) {
+      const container = this.props.resources?.claPermissions?.records?.[0];
+      if (this.props.resources?.claPermissions?.isPending) {
         return <div className={css.loading}><Loading size="large" /></div>;
       }
 
