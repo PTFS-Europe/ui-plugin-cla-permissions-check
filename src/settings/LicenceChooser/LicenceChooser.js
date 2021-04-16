@@ -40,6 +40,10 @@ LicenceChooser.manifest = Object.freeze({
 
 LicenceChooser.propTypes = {
   resources: PropTypes.shape({
+    licences: PropTypes.shape({
+      hasLoaded: PropTypes.bool,
+      records: PropTypes.array
+    }),
     permissions: PropTypes.shape({
       records: PropTypes.arrayOf(PropTypes.object),
     }),

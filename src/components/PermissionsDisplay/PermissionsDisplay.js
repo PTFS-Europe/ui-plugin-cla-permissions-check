@@ -36,6 +36,7 @@ class PermissionsDisplay extends React.Component {
               const parsed = JSON.parse(config.value);
               return parsed.apiKey;
             }
+            return null;
           }
         }
       },

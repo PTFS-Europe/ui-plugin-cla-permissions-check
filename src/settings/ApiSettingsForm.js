@@ -54,7 +54,12 @@ const DisplayApiSettingsForm = ({
 
 DisplayApiSettingsForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  label: PropTypes.node
+  label: PropTypes.node,
+  pristine: PropTypes.bool,
+  submitting: PropTypes.bool,
+  values: PropTypes.shape({
+    apiKey: PropTypes.string
+  })
 };
 
 export default stripesFinalForm({
