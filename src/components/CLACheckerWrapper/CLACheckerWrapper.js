@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 
 import { Modal } from '@folio/stripes/components';
+import { IfPermission } from '@folio/stripes/core';
 
 import PermissionsDisplay from '../PermissionsDisplay/PermissionsDisplay';
 
@@ -19,17 +20,19 @@ const CLACheckerWrapper = ({
 
   return identifier ? (
     <>
-      { renderTrigger()}
-      <Modal
-        dismissible
-        closeOnBackgroundClick
-        label={intl.formatMessage({ id: 'ui-plugin-cla-permissions-check.meta.title' })}
-        onClose={toggle}
-        open={open}
-        size="large"
-      >
-        <PermissionsDisplay type={identifier.type} value={identifier.value} />
-      </Modal>
+      <IfPermission perm="module.cla-permissions-check.enabled">
+        { renderTrigger()}
+        <Modal
+          dismissible
+          closeOnBackgroundClick
+          label={intl.formatMessage({ id: 'ui-plugin-cla-permissions-check.meta.title' })}
+          onClose={toggle}
+          open={open}
+          size="large"
+        >
+          <PermissionsDisplay type={identifier.type} value={identifier.value} />
+        </Modal>
+      </IfPermission>
     </>
   ) : null;
 };
