@@ -12,7 +12,8 @@
     "start": "stripes serve",
     "build": "stripes build --output ./output",
     "test": "stripes test karma",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "formatjs-compile": "formatjs compile-folder --ast --format simple ./translations/ui-plugin-cla-permissions-check ./translations/ui-plugin-cla-permissions-check/compiled"
   },
   "devDependencies": {
     "@bigtest/interactor": "^0.8.1",
@@ -22,6 +23,7 @@
     "@folio/stripes": "^6.0.0",
     "@folio/stripes-cli": "^2.0.0 || ^1.14.0",
     "@folio/stripes-core": "^7.0.0",
+    "@formatjs/cli": "^4.2.7",
     "babel-eslint": "^9.0.0",
     "chai": "^4.2.0",
     "core-js": "^3.6.1",
@@ -38,8 +40,7 @@
     "regenerator-runtime": "^0.13.3",
     "sinon": "^7.3.2"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "peerDependencies": {
     "@folio/stripes": "^6.0.0",
     "classnames": "^2.3.1",
