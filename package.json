@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A plugin that allows you to make queries to the CLA Check Permissions service for instances within your inventory",
   "main": "src/index.js",
-  "repository": "",
+  "repository": "PTFS-Europe/ui-plugin-cla-permissions-check",
   "license": "Apache-2.0",
   "engines": {
     "node": ">=12.21.0"
