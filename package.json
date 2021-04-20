@@ -63,7 +63,7 @@
     "hasSettings": true,
     "permissionSets": [
       {
-        "permissionName": "settings.ui-plugin-cla-permissions-check.enabled",
+        "permissionName": "settings.plugin-cla-permissions-check.enabled",
         "displayName": "Settings: CLA Permissions Check - display settings pages",
         "subPermissions": [
           "settings.enabled"
