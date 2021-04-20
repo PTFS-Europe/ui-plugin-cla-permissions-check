@@ -4,22 +4,20 @@ import { Settings } from '@folio/stripes/smart-components';
 
 import APISettings from './api-settings';
 
-export default class ClaPermissionsCheckSettings extends React.Component {
-  pages = [
-    {
-      route: 'api-settings',
-      label: <FormattedMessage id="ui-plugin-cla-permissions-check.settings.pane.apiTitle" />,
-      component: APISettings,
-    }
-  ];
-
-  render() {
-    return (
-      <Settings
-        {...this.props}
-        pages={this.pages}
-        paneTitle={<FormattedMessage id="ui-plugin-cla-permissions-check.settings.pane.settingsTitle" />}
-      />
-    );
+const pages = [
+  {
+    route: 'api-settings',
+    label: <FormattedMessage id="ui-plugin-cla-permissions-check.settings.pane.apiTitle" />,
+    component: APISettings,
   }
-}
+];
+
+const ClaPermissionsCheckSettings = (props) => (
+  <Settings
+    {...props}
+    pages={pages}
+    paneTitle={<FormattedMessage id="ui-plugin-cla-permissions-check.settings.pane.settingsTitle" />}
+  />
+);
+
+export default ClaPermissionsCheckSettings;
