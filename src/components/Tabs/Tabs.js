@@ -1,16 +1,15 @@
-import React, { useState, useContext, cloneElement, useEffect } from 'react';
+import React, { useContext, cloneElement, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { useIntl } from 'react-intl';
 
-import css from './Tabs.css';
+import { TabsContext, TabsContextProvider } from './TabsContext';
 
-const TabsContext = React.createContext();
+import css from './Tabs.css';
 
 const Tabs = (props) => {
   const { children } = props;
-  const [selectedTabIndex, setSelectedTabIndex] = useState(0);
 
   const childrenArray = Array.isArray(children) ? children : [children];
   const childIndexes = {};
@@ -29,13 +28,9 @@ const Tabs = (props) => {
   });
 
   return (
-    <TabsContext.Provider value={{
-      selectedTabIndex,
-      setSelectedTabIndex
-    }}
-    >
+    <TabsContextProvider>
       {childrenWithIndex}
-    </TabsContext.Provider>
+    </TabsContextProvider>
   );
 };
 
