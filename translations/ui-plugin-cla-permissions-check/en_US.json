@@ -1,6 +1,8 @@
 {
   "meta.title": "CLA Permissions Check",
   "permissionCategories": "Permission category tabs",
+  "copyingPermitted": "Copying permitted",
+  "copyingProhibited": "Copying prohibited",
   "settings.pane.settingsTitle": "CLA Permissions Check",
   "settings.pane.apiTitle": "API settings",
   "settings.field.apiKey": "Enter your CLA API key",

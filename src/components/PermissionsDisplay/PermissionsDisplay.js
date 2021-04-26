@@ -4,6 +4,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { flowRight } from 'lodash';
+import { injectIntl } from 'react-intl';
+
 import { stripesConnect } from '@folio/stripes/core';
 import { Loading } from '@folio/stripes/components';
 
@@ -57,17 +60,13 @@ class PermissionsDisplay extends React.Component {
           isPending: PropTypes.bool
         })
       }).isRequired,
+      intl: PropTypes.object
     };
-
-    getProp(usage, prop) {
-      const markup = usage?.[prop];
-      return { __html: markup };
-    }
 
     getIcon(usage) {
       return ['Permitted', 'available'].includes(usage.reportType) ?
-        <span className={css.permitted}>{String.fromCharCode(10004)}</span> :
-        <span className={css.notPermitted}>{String.fromCharCode(10006)}</span>;
+        <span role="img" aria-label={this.props.intl.formatMessage({ id: 'ui-plugin-cla-permissions-check.copyingPermitted' })} className={css.permitted}>{String.fromCharCode(10004)}</span> :
+        <span role="img" aria-label={this.props.intl.formatMessage({ id: 'ui-plugin-cla-permissions-check.copyingProhibited' })} className={css.notPermitted}>{String.fromCharCode(10006)}</span>;
     }
 
     getDangerousProp(data, prop) {
@@ -83,7 +82,7 @@ class PermissionsDisplay extends React.Component {
     render() {
       const container = this.props.resources?.claPermissions?.records?.[0];
       if (this.props.resources?.claPermissions?.isPending) {
-        return <div className={css.loading}><Loading size="large" /></div>;
+        return <div role="alert" aria-busy="true" className={css.loading}><Loading size="large" /></div>;
       }
 
       const usages = container?.usagesSummary;
@@ -92,7 +91,7 @@ class PermissionsDisplay extends React.Component {
       }
 
       return (
-        <div className={css.container}>
+        <div role="region" className={css.container}>
           {(container.metadata?.title?.length > 0 ||
               container.metadata?.contributor?.length > 0) &&
               <div className={css.metadata}>
@@ -136,4 +135,6 @@ class PermissionsDisplay extends React.Component {
     }
 }
 
-export default stripesConnect(PermissionsDisplay);
+export default flowRight(
+  injectIntl
+)(stripesConnect(PermissionsDisplay));
