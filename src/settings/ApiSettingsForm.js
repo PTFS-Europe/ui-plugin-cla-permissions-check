@@ -13,14 +13,14 @@ import stripesFinalForm from '@folio/stripes/final-form';
 
 import LicenceChooser from './LicenceChooser';
 
-const DisplayApiSettingsForm = ({
-  handleSubmit,
+const ApiSettingsForm = ({
+  onSubmit,
   label,
   pristine,
   submitting,
   values
 }) => (
-  <form id="cla-api-settings-form" onSubmit={handleSubmit}>
+  <form id="cla-api-settings-form" onSubmit={onSubmit}>
     <Pane
       defaultWidth="fill"
       fluidContentWidth
@@ -52,8 +52,8 @@ const DisplayApiSettingsForm = ({
   </form>
 );
 
-DisplayApiSettingsForm.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
+ApiSettingsForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
   label: PropTypes.node,
   pristine: PropTypes.bool,
   submitting: PropTypes.bool,
@@ -68,4 +68,4 @@ export default stripesFinalForm({
   subscription: {
     values: true
   }
-})(DisplayApiSettingsForm);
+})(ApiSettingsForm);
