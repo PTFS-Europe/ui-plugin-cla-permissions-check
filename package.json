@@ -29,6 +29,7 @@
     "chai": "^4.2.0",
     "core-js": "^3.6.1",
     "eslint": "^6.2.1",
+    "eslint-plugin-jest": "^24.3.6",
     "inflected": "^2.0.4",
     "miragejs": "^0.1.40",
     "mocha": "^6.1.3",
