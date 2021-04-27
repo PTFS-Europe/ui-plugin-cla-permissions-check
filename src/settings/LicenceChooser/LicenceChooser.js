@@ -5,6 +5,7 @@ import { Field } from 'react-final-form';
 
 import {
   Select,
+  Loading
 } from '@folio/stripes/components';
 import { stripesConnect } from '@folio/stripes/core';
 
@@ -19,7 +20,7 @@ const LicenceChooser = ({ resources }) => {
         dataOptions={resources.licences.records.map(licence => ({ value: licence.code, label: licence.description }))}
       />
     </>
-  ) : null;
+  ) : <div role="alert" aria-busy="true"><Loading size="large" /></div>;
 };
 
 LicenceChooser.manifest = Object.freeze({
