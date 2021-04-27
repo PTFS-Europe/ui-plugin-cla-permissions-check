@@ -8,6 +8,19 @@ import { TabsContext, TabsContextProvider } from './TabsContext';
 
 import css from './Tabs.css';
 
+/* Usage:
+  <Tabs>
+    <TabList>
+      <Tab>Tab 0</Tab>
+      <Tab>Tab 1</Tab>
+      <Tab>Tab 2</Tab>
+    </TabList>
+    <TabPanel><>Panel 0</></TabPanel>
+    <TabPanel><>Panel 1</></TabPanel>
+    <TabPanel><>Panel 2</></TabPanel>
+  </Tabs>
+*/
+
 const Tabs = (props) => {
   const { children } = props;
 
