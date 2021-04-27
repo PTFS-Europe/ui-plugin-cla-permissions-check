@@ -1,4 +1,4 @@
-@import '../variables';
+@import '@folio/stripes-components/lib/variables';
 
 ul {
     margin: 0;
