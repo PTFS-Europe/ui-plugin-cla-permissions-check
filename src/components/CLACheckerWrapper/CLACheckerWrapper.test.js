@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { act, screen } from '@testing-library/react';
+import { act } from '@testing-library/react';
 import renderWithIntl from '../../../test/jest/helpers/renderWithIntl';
 
 import CLACheckerWrapper from './CLACheckerWrapper';
