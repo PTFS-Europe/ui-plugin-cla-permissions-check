@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Settings } from '@folio/stripes/smart-components';
 
-import APISettings from './api-settings';
+import APISettings from './ApiSettings';
 
 const pages = [
   {
