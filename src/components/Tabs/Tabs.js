@@ -1,6 +1,5 @@
-import React, { useContext, cloneElement, useEffect } from 'react';
+import React, { useContext, cloneElement, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 import { useIntl } from 'react-intl';
 
@@ -106,7 +105,7 @@ const TabList = (props) => {
     <ul
       onKeyDown={handleKeyDown}
       aria-label={intl.formatMessage({ id: 'ui-plugin-cla-permissions-check.permissionCategories' })}
-      className={classNames(css.tabList)}
+      className={css.tabList}
       role="tablist"
     >
       {childrenWithIndex}
@@ -127,7 +126,7 @@ const Tab = (props) => {
     index
   } = props;
 
-  let thisTab = null;
+  const thisTab = useRef(null);
 
   const {
     selectedTabIndex,
@@ -137,8 +136,10 @@ const Tab = (props) => {
   // Ensure the correct tab has focus
   useEffect(() => {
     if (selectedTabIndex === index) {
-      thisTab.focus();
+      thisTab.current.focus();
     }
+  // Having index as a dep makes no sense, it's never
+  // going to change
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedTabIndex]);
 
@@ -150,12 +151,12 @@ const Tab = (props) => {
     // so we don't need a onKey* handler here
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events
     <li
-      ref={(i) => { thisTab = i; }}
+      ref={thisTab}
       tabIndex={selectedTabIndex === index ? 0 : -1}
       onClick={() => setSelectedTabIndex(index)}
       aria-selected={selectedTabIndex === index}
       aria-controls={`tabpanel-${index}`}
-      className={classNames(finalStyles)}
+      className={finalStyles}
       id={`tab-${index}`}
       role="tab"
     >
@@ -185,7 +186,7 @@ const TabPanel = (props) => {
     <div
       tabIndex={selectedTabIndex === index ? 0 : -1}
       id={`tabpanel-${index}`}
-      className={classNames(css.tabPanel)}
+      className={css.tabPanel}
       role="tabpanel"
     >
       {children}

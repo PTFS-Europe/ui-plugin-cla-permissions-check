@@ -11,7 +11,7 @@ import { stripesConnect } from '@folio/stripes/core';
 
 const LicenceChooser = ({ resources }) => {
   return resources.licences.hasLoaded ? (
-    <>
+    <div aria-live="polite">
       <Field
         component={Select}
         id="licence"
@@ -19,8 +19,8 @@ const LicenceChooser = ({ resources }) => {
         name="licence"
         dataOptions={resources.licences.records.map(licence => ({ value: licence.code, label: licence.description }))}
       />
-    </>
-  ) : <div role="alert" aria-busy="true"><Loading size="large" /></div>;
+    </div>
+  ) : <div data-testid="licences-loading" aria-busy="true" aria-live="polite"><Loading size="large" /></div>;
 };
 
 LicenceChooser.manifest = Object.freeze({

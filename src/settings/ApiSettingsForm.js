@@ -64,7 +64,7 @@ ApiSettingsForm.propTypes = {
 
 export default stripesFinalForm({
   navigationCheck: true,
-  enableReinialize: true,
+  enableReinitialize: true,
   subscription: {
     values: true
   }

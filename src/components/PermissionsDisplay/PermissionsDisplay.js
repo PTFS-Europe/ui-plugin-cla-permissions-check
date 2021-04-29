@@ -4,7 +4,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { flowRight } from 'lodash';
 import { injectIntl } from 'react-intl';
 
 import { stripesConnect } from '@folio/stripes/core';
@@ -135,6 +134,4 @@ class PermissionsDisplay extends React.Component {
     }
 }
 
-export default flowRight(
-  injectIntl
-)(stripesConnect(PermissionsDisplay));
+export default injectIntl(stripesConnect(PermissionsDisplay));
