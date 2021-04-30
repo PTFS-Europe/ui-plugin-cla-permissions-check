@@ -17,6 +17,7 @@
     "formatjs-compile": "formatjs compile-folder --ast --format simple ./translations/ui-plugin-cla-permissions-check ./translations/ui-plugin-cla-permissions-check/compiled"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.13.15",
     "@folio/eslint-config-stripes": "^5.3.0",
     "@folio/stripes": "^6.0.0",
     "@folio/stripes-cli": "^2.0.0 || ^1.14.0",
