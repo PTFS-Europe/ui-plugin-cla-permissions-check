@@ -11,8 +11,8 @@
   "scripts": {
     "start": "stripes serve",
     "build": "stripes build --output ./output",
-    "test": "yarn run test:unit",
-    "test:unit": "jest --silent --ci --coverage",
+    "test": "jest --verbose",
+    "test:ci": "jest --silent --ci --coverage",
     "lint": "eslint .",
     "formatjs-compile": "formatjs compile-folder --ast --format simple ./translations/ui-plugin-cla-permissions-check ./translations/ui-plugin-cla-permissions-check/compiled"
   },
