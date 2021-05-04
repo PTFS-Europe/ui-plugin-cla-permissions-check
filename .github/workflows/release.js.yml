@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    tags:
+    - '*'
+
+jobs:
+    name: Create GitHub release
+    needs: build_and_test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+    - name: Create a release
+      uses: ncipollo/release-action@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
