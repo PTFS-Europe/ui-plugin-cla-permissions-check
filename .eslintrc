@@ -4,5 +4,6 @@
   "plugins": ["jest"],
   "env": {
     "jest/globals": true
-  }
+  },
+  "ignorePatterns": ["artifacts", ".github", "node_modules", "output", "translations"]
 }

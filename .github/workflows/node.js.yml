@@ -34,6 +34,8 @@ jobs:
     - run: npm run test:ci
     - run: npm run build --if-present
     - run: npm test
+    - name: Run ESLint
+      run: yarn run eslint .
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()
