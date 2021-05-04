@@ -43,7 +43,8 @@ jobs:
       if: always()
       with:
         files: junit.xml
-  create_release:
+
+  github-release:
     name: Create GitHub release
     needs: build_and_test
     runs-on: ubuntu-latest
