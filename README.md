@@ -1,4 +1,4 @@
-# ui-plugin-cla-permissions-check [![Create a build and run tests](https://github.com/PTFS-Europe/ui-plugin-cla-permissions-check/actions/workflows/build-and-test.yml/badge.svg?branch=master)](https://github.com/PTFS-Europe/ui-plugin-cla-permissions-check/actions/workflows/build-and-test.yml)
+# ui-plugin-cla-permissions-check
 
 Copyright (C) 2021 PTFS Europe
 

@@ -1,6 +1,6 @@
 {
   "name": "@ptfs-europe/plugin-cla-permissions-check",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A plugin that allows you to make queries to the CLA Check Permissions service for instances within your inventory",
   "main": "src/index.js",
   "repository": "PTFS-Europe/ui-plugin-cla-permissions-check",
