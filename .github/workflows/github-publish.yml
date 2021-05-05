@@ -10,7 +10,6 @@ on:
 jobs:
   github-release:
     name: Create GitHub release
-    needs: build_and_test
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repo
