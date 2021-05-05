@@ -15,5 +15,5 @@ jobs:
     - name: Create a release
       uses: ncipollo/release-action@v1
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.PUBLISH_PAT }}
 
