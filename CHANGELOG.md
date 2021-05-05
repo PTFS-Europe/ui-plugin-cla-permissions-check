@@ -1,5 +1,9 @@
 # Change history for ui-plugin-cla-permissions-check
 
+## 1.0.4 (Released 20210505)
+
+* Modifications to CI work flows
+
 ## 1.0.3 (Released 20210505)
 
 * Modifications to CI work flows
