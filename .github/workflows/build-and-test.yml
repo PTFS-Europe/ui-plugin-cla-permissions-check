@@ -38,6 +38,12 @@ jobs:
     - name: Run ESLint
       run: yarn run eslint .
 
+    - name: Add badges
+      uses: rocktimsaikia/badge-it@master
+      with:
+        GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+        badges: 'gh_version, gh_license'
+
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()

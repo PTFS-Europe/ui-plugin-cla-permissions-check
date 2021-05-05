@@ -1,10 +1,8 @@
-# ui-plugin-cla-permissions-check
+# ui-plugin-cla-permissions-check [![Create a build and run tests](https://github.com/PTFS-Europe/ui-plugin-cla-permissions-check/actions/workflows/build-and-test.yml/badge.svg?branch=master)](https://github.com/PTFS-Europe/ui-plugin-cla-permissions-check/actions/workflows/build-and-test.yml)
 
 Copyright (C) 2021 PTFS Europe
 
 This software is distributed under the terms of the Apache License, Version 2.0. See the file ["LICENSE"](https://github.com/PTFS-Europe/ui-plugin-cla-permissions-check/blob/master/LICENSE) for more information.
-
-[![Run unit tests](https://github.com/PTFS-Europe/ui-plugin-cla-permissions-check/actions/workflows/node.js.yml/badge.svg)](https://github.com/PTFS-Europe/ui-plugin-cla-permissions-check/actions/workflows/node.js.yml)
 
 ## Introduction
 
